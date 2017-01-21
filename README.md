@@ -1,10 +1,11 @@
 
+## [Screen Cast disponível no YouTube](https://youtu.be/G2IK3oAnXS0)
 
-## Principis motivadores
-    - Compartilhamento de conhecimento
-    - "Quem ensina aprende ao ensinar" Paulo Freire
+## Principais motivadores
+  - Compartilhamento de conhecimento
+  - "Quem ensina aprende ao ensinar" [Paulo Freire](https://pt.wikipedia.org/wiki/Paulo_Freire)
 
-## Python TDDLearn [link github](https://github.com/cld-santos/python-tddlearn)
+## Python TDDLearn 
     Aprendizagem guiada por testes.
 
 ## Meus 50 cents sobre django.
@@ -27,7 +28,7 @@ Usamos python3 nesta demonstração, principalmente pq eu quis estar aderente ao
 Django é um framework web MVT model view template desenvolvido em python.
 Facilitar a publicação de conteúdo, bastante utilizado por jornais provedores de conteúdo, hj pelo insta, pinterest, globo.com
 
-o que me impressiona:
+O que me impressiona:
 1. Perfeita aderência ao protocolo http com roteamento de urls parametrizados para acessar views.
 2. Componentização em um nível que induz os desenvolvedores à criar componentes que possam ser facilmentes incluídos em qualquer outro site django.
 3. Linha de comando pra tudo, pra testar, pra subir o site, pra fazer uma migrate e etc.

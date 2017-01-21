@@ -20,31 +20,31 @@ exec{"pg-repo-key":
 
 exec { "apt-update":
     command => "/usr/bin/apt-get update",
-        require => Exec["update-locale"],
+    require => Exec["update-locale"],
 }
 
 package{["git", "build-essential", "libproj-dev", "mercurial", "gcc", "g++", "libssl-dev", "openssl" ]:
-        ensure => "present",
-        require => Exec["apt-update"],
+    ensure => "present",
+    require => Exec["apt-update"],
 }
 
 
 package{["libgdal1-dev","libgeos-dev","libxml2-dev","libxslt1-dev"]:
-        ensure => "present",
-        require => Exec["apt-update"],
+    ensure => "present",
+    require => Exec["apt-update"],
 }
 
 
 package{["postgresql-9.6","postgresql-server-dev-9.6","postgresql-client-9.6","postgresql-contrib-9.6","libpq-dev"]:
-        ensure => "present",
-        require => Exec["apt-update"],
+    ensure => "present",
+    require => Exec["apt-update"],
 }
 
 
 package{["postgresql-9.6-postgis-2.3","postgresql-9.6-postgis-2.3-scripts","postgresql-9.6-postgis-scripts"]:
-        ensure => "present",
-        require => Exec["apt-update"],
-        notify => Service["postgresql"],
+    ensure => "present",
+    require => Exec["apt-update"],
+    notify => Service["postgresql"],
 }
 
 user{"postgres":
@@ -67,71 +67,65 @@ exec{ "set-postgres-password":
     require => Service["postgresql"],
 }
 
-exec{ "create database python_tddlearn":
-    command => "/usr/bin/psql -c \"CREATE DATABASE python_tddlearn;\"",
-    user => "postgres",
-    require => Service["postgresql"],
-}
-
-exec{ "create database python_tddlearn":
+exec{ "create database hands_on":
     command => "/usr/bin/psql -c \"CREATE DATABASE hands_on;\"",
     user => "postgres",
     require => Service["postgresql"],
 }
 
 file{"/etc/postgresql/9.6/main/pg_hba.conf":
-        source => "/vagrant/environments/all/conf/pg_hba.conf",
-        owner   => postgres,
-        group   => postgres,
-        mode    => "0640",
+    source => "/vagrant/environments/all/conf/pg_hba.conf",
+    owner   => postgres,
+    group   => postgres,
+    mode    => "0640",
     require => Package["postgresql-9.6"],
 
 }
 
 file{"/etc/postgresql/9.6/main/postgresql.conf":
-        source => "/vagrant/environments/all/conf/postgresql.conf",
-        owner   => postgres,
-        group   => postgres,
-        mode    => "0644",
+    source => "/vagrant/environments/all/conf/postgresql.conf",
+    owner   => postgres,
+    group   => postgres,
+    mode    => "0644",
     require => Package["postgresql-9.6"],
 
 }
 
 package { 'python':
-	ensure => present,
-	name => "python3.5",
+    ensure => present,
+    name => "python3.5",
 }
 
 package { 'python3-pip':
-  ensure => '8.1.1-2ubuntu0.2',
-   require => Package["python"],
+    ensure => present,
+    require => Package["python"],
 }
 
 package { 'unittest':
-        provider => pip3,
-        ensure   => present,
-        name     => "unittest2",
-        require => Package["python3-pip"],
+    provider => pip3,
+    ensure   => present,
+    name     => "unittest2",
+    require => Package["python3-pip"],
 }
 
 package {'django':
-        provider => pip3,
-        ensure => present,
-        name => "django",
-        require => Package["python3-pip"],
+    provider => pip3,
+    ensure => present,
+    name => "django",
+    require => Package["python3-pip"],
 }
 
 package {'gunicorn':
-        provider => pip3,
-        ensure => '19.3.0',
-        name => "gunicorn",
-        require => Package["python3-pip"],
+    provider => pip3,
+    ensure => '19.3.0',
+    name => "gunicorn",
+    require => Package["python3-pip"],
 }
 
 package {'psycopg2':
-        provider => pip3,
-        ensure => '2.6.1',
-        name => "psycopg2",
-        require => Package["python3-pip"],
+    provider => pip3,
+    ensure => '2.6.1',
+    name => "psycopg2",
+    require => Package["python3-pip"],
 }
 

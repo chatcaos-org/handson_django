@@ -9,6 +9,7 @@ def index(request):
 
 
 def get_post(request, category, post_name):
+    filled_template = None
     db_posts = Post.objects.filter(category__iexact=category)
     context = {'page_title': 'hands on django', 'posts': []}
 

@@ -5,8 +5,20 @@
   - Compartilhamento de conhecimento
   - "Quem ensina aprende ao ensinar" [Paulo Freire](https://pt.wikipedia.org/wiki/Paulo_Freire)
 
+## Como executar os testes
+
+``` bash
+$ cd hands_on
+$ python3 manage.py check
+$ python3 manage.py migrate
+$ python3 manage.py test
+
+```
+
+Há um teste 
+
 ## Python TDDLearn 
-    Aprendizagem guiada por testes.
+  Aprendizagem guiada por testes.
 
 ## Meus 50 cents sobre django.
 

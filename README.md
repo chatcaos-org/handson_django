@@ -41,6 +41,7 @@ Django é um framework web MVT model view template desenvolvido em python.
 Facilitar a publicação de conteúdo, bastante utilizado por jornais provedores de conteúdo, hj pelo insta, pinterest, globo.com
 
 O que me impressiona:
+
 1. Perfeita aderência ao protocolo http com roteamento de urls parametrizados para acessar views.
 2. Componentização em um nível que induz os desenvolvedores à criar componentes que possam ser facilmentes incluídos em qualquer outro site django.
 3. Linha de comando pra tudo, pra testar, pra subir o site, pra fazer uma migrate e etc.
@@ -48,11 +49,14 @@ O que me impressiona:
 5. ORM com Migrations
 6. Module de testes
 7. Tem uma baita comunidade ativa fazendo muitas coisas legais e pela facilidade de adoção fica massa demais incorporar libs de terceiros.
-8. Além de td isso temos webservers como tornado ready to event loop e processamento assíncrono
+8. Além de td isso temos webservers como tornado ready to event loop e processamento assíncrono.
 
-o que me desagrada:
+
+O que me desagrada:
+
 1. Tem um belo settings de configuração do framework, parte chata não gosto nada sou mto mais fã de um padrão que o porfa sempre fala e que a M$ e o Ruby on rails tbm usa, fugiu a porra do nome(Porém eu não tenho uma sugestão melhor então fico na minha);
 2. Não ter a possibilidade de escrever o mesmo código para o client e server.
+
 
 Com td isso vc pode fazer mta mandraquisse... e contruir mta coisa boua, coisas simples como este blog que vc tá lendo ou o instagram ou pinterest, além de uma porrada de portal e site de noticias.
 
